@@ -8,6 +8,7 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
+/Procfile
 /log/*
 /tmp/*
 !/log/.keep
