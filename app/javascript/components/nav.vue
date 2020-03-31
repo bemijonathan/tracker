@@ -1,5 +1,5 @@
 <template>
-    <b-navbar>
+    <b-navbar type="is-primary">
         <template slot="brand">
             <b-navbar-item href="/">
                 <img
@@ -9,11 +9,11 @@
             </b-navbar-item>
         </template>
         <template slot="start">
-            <b-navbar-item href="#">
+            <b-navbar-item href="/">
                 Home
             </b-navbar-item>
             <b-navbar-item href="#">
-                Documentation
+                Shipping
             </b-navbar-item>
             <b-navbar-dropdown label="Info">
                 <b-navbar-item href="#">
@@ -39,3 +39,9 @@
         </template>
     </b-navbar>
 </template>
+
+<script>
+export default {
+    
+}
+</script>

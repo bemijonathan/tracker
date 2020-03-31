@@ -3,6 +3,7 @@
 import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
+import navbar from '../components/nav'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 
@@ -17,6 +18,6 @@ document.addEventListener('turbolinks:load', () => {
         message: "Can you say hello?"
       }
     },
-    components: { App }
+    components: { App, navbar }
   })
 })
