@@ -6,6 +6,7 @@ import App from '../app.vue'
 import navbar from '../components/nav'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
+import footerComponent from '../components/footer'
 
 Vue.use(Buefy)
 Vue.use(TurbolinksAdapter)
@@ -18,6 +19,6 @@ document.addEventListener('turbolinks:load', () => {
         message: "Can you say hello?"
       }
     },
-    components: { App, navbar }
+    components: { App, navbar, footerComponent  }
   })
 })
