@@ -2,8 +2,8 @@
   <div id="app">
     <Banner />
     <div class="container">
-      <div class="columns is-tablet" style="margin-top:45px">
-        <div class="column" v-for="(img, i) in images" :key="i">
+      <div class="columns is-desktop" style="margin-top:45px">
+        <div class="column" v-for="(img, i) in images" :key="i" style="padding:10px">
           <div class="card">
             <img :src="'/images/'+img.img" class="card-image" />
             <footer class="card-footer">
