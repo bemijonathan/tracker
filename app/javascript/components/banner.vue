@@ -15,7 +15,7 @@
             <h1 class="title">{{carousel.title}}</h1>
             <p>
               Express Delivery Services & International Shipping
-              When you ship with DHL Express – you’re shipping with specialists in international shipping and courier delivery services! With our wide range of express parcel and package services, along with shipping and tracking solutions to fit your needs – learn how DHL Express can deliver!
+              
             </p>
             <div>
               <b-button type="is-dark" inverted>Log In</b-button>
