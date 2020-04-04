@@ -41,11 +41,14 @@
           </div>
         </div>
       </section>
+
+      <Search/>
     </div>
   </div>
 </template>
 
 <script>
+import Search from './components/searchtrack'
 import Banner from "./components/banner";
 export default {
   data: function() {
@@ -59,7 +62,8 @@ export default {
     };
   },
   components: {
-    Banner
+    Banner,
+    Search
   }
 };
 </script>
