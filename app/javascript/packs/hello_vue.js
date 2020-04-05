@@ -1,4 +1,5 @@
 // import Vue from 'vue'
+import Axios from 'axios'
 
 import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue/dist/vue.esm'
@@ -9,9 +10,14 @@ import Login from '../login.vue'
 import signup from '../signup.vue'
 import 'buefy/dist/buefy.css'
 import footerComponent from '../footer.vue'
+// Axios.defaults.headers = {
+//   'Content-Type': 'application/json'
+// },
+
 
 Vue.use(Buefy)
 Vue.use(TurbolinksAdapter)
+Vue.prototype.$axios = Axios;
 
 document.addEventListener('turbolinks:load', () => {
   const app = new Vue({

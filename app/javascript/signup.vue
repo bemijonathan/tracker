@@ -1,40 +1,102 @@
 <template>
   <section>
-    
-    <form @submit="Signup" style="max-width:350px;margin: 20px auto;">
-        <p>We are eager to start shipping for you and your organization. Kindly fill the form to commence business.</p>
-      <b-field label="Username">
-        <b-input placeholder="johnsilver"></b-input>
+    <form @submit.prevent="Signup" style="max-width:350px;margin: 20px auto;">
+      <p>We are eager to start shipping for you and your organization. Kindly fill the form to commence business.</p>
+      <b-field
+        :type="error.includes('email')? 'is-danger' : '' "
+        :message="errormessage.email? errormessage.email[0] : '' "
+        label="Email"
+      >
+        <b-input placeholder="email" type="email" v-model="email"></b-input>
       </b-field>
-      <b-field label="Street">
-        <b-input type="text"></b-input>
+      <b-field
+        :type="error.includes('street')? 'is-danger' : '' "
+        :message="errormessage.street? errormessage.email[0] : '' "
+        label="Street"
+      >
+        <b-input type="text" name="street" v-model="street"></b-input>
       </b-field>
-      <b-field label="State">
-        <b-input type="text"></b-input>
+      <b-field
+        :type="error.includes('state')? 'is-danger' : '' "
+        :message="errormessage.state? errormessage.email[0] : '' "
+        label="State"
+      >
+        <b-input type="text" name="state" v-model="state"></b-input>
       </b-field>
-      <b-field label="Country">
-        <b-input type="text"></b-input>
+      <b-field
+        :type="error.includes('country')? 'is-danger' : '' "
+        :message="errormessage.country? errormessage.email[0] : '' "
+        label="Country"
+      >
+        <b-input type="text" name="country" v-model="country"></b-input>
       </b-field>
-      <b-field label="zip code">
-        <b-input placeholder="123001" type="text"></b-input>
+      <b-field
+        :type="error.includes('zip_code')? 'is-danger' : '' "
+        :message="errormessage.zip_code? errormessage.email[0] : '' "
+        label="zip code"
+        name="zip_code"
+      >
+        <b-input placeholder="123001" type="text" v-model="zip_code"></b-input>
       </b-field>
-      <b-field label="Password">
-        <b-input placeholder="123" type="password"></b-input>
+      <b-field
+        :type="error.includes('password')? 'is-danger' : '' "
+        :message="errormessage.password? errormessage.email[0] : '' "
+        label="Password"
+      >
+        <b-input placeholder="123" type="password" name="password" v-model="password"></b-input>
       </b-field>
-      <b-field label="Confirm Password">
-        <b-input placeholder="123" type="password"></b-input>
-      </b-field>
-      <b-button type="is-primary" expanded loading>
-          Submit
-      </b-button>
+      <b-button type="is-primary" expanded @click="Signup" :loading="loading">Submit</b-button>
     </form>
   </section>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+      zip_code: "",
+      street: "",
+      state: "",
+      country: "",
+      loading: false,
+      error: [],
+      errormessage: {}
+    };
+  },
   methods: {
-    Signup() {}
+    async Signup() {
+      this.loading = true;
+      try {
+        let f = {
+          email: this.email,
+          password: this.password,
+          zip_code: this.zip_code,
+          street: this.street,
+          state: this.state,
+          country: this.country,
+          authenticity_token: document.querySelector('[name="csrf-token"]')
+            .content
+        };
+        let response = await this.$axios.post(
+          "http://localhost:5000/users.json",
+          f,
+          {
+            "Content-Type": "application/json"
+          }
+        );
+        console.log(response);
+      } catch (error) {
+        console.log(error.response.data);
+
+        let responseError = error.response.data;
+        this.errormessage = responseError;
+        this.error = Object.keys(responseError);
+      }
+
+      this.loading = false;
+    }
   }
 };
 </script>
