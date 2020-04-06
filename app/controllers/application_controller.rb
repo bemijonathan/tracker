@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
     def authenticated
         user = User.find_by(id: session[:id])
-        @current_user = user.slice(:id,  :email)
+        if user
+            @current_user = user.slice(:id,  :email)
+        end
     end
 end
