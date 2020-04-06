@@ -13,10 +13,11 @@
   </head>
 
   <body>
+  
     <div id="hello">
-      <navbar> </navbar>
+    
+      <navbar :props="<%= "#{@current_user.to_json}"  %>" > </navbar>
       <%= yield %>
-      
     </div>
     <div class="content has-text-centered">
     <p style="margin:30px ;">

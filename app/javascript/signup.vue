@@ -67,6 +67,10 @@ export default {
   },
   methods: {
     async Signup() {
+
+      this.errormessage = {};
+      this.error = []
+
       this.loading = true;
       try {
         let f = {
@@ -86,6 +90,7 @@ export default {
             "Content-Type": "application/json"
           }
         );
+        window.location.assign('/')
         console.log(response);
       } catch (error) {
         console.log(error.response.data);
