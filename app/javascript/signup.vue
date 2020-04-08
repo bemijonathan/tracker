@@ -84,7 +84,7 @@ export default {
             .content
         };
         let response = await this.$axios.post(
-          "http://localhost:5000/users.json",
+          "/users.json",
           f,
           {
             "Content-Type": "application/json"
