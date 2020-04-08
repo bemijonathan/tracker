@@ -1,5 +1,5 @@
 <template>
-<div class="contianer">
+<div class="contianer" v-if="checkpage">
 <b-navbar type="is-primary">
     <template slot="brand">
       <b-navbar-item href="/">
@@ -32,7 +32,7 @@
     <template slot="end" v-else>
       <b-navbar-item tag="div">
         <b-navbar-dropdown label="Profile">
-            <b-navbar-item href="#"> Dashboard </b-navbar-item>
+            <b-navbar-item href="/dashboard"> Dashboard </b-navbar-item>
             <b-navbar-item href="/logout"> Log Out </b-navbar-item>
             <b-navbar-item href="#" v-if="props.admin"> Settings </b-navbar-item>
         </b-navbar-dropdown>
@@ -48,6 +48,12 @@ export default {
   props: ["props"],
   mounted() {
     console.log(this.props);
+  },
+  computed:{
+    checkpage(){
+      if(window.location.pathname.includes('dashboard')) return false
+      else return true
+    }
   }
 };
 </script>

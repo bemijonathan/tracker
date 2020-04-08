@@ -8,6 +8,7 @@ import navbar from '../components/nav'
 import Buefy from 'buefy'
 import Login from '../login.vue'
 import signup from '../signup.vue'
+import Dashboard from '../dashboard.vue'
 import 'buefy/dist/buefy.css'
 import footerComponent from '../footer.vue'
 // Axios.defaults.headers = {
@@ -27,6 +28,6 @@ document.addEventListener('turbolinks:load', () => {
         message: "Can you say hello?"
       }
     },
-    components: { App, navbar, footerComponent , Login , signup}
+    components: { App, navbar, footerComponent , Login , signup, Dashboard}
   })
 })
