@@ -1,0 +1,119 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shipper address:</strong>
+  <%= @transaction.shipper_address %>
+</p>
+
+<p>
+  <strong>Shiper name:</strong>
+  <%= @transaction.shiper_name %>
+</p>
+
+<p>
+  <strong>Shiper phone number:</strong>
+  <%= @transaction.shiper_phone_number %>
+</p>
+
+<p>
+  <strong>Shipper email:</strong>
+  <%= @transaction.shipper_email %>
+</p>
+
+<p>
+  <strong>Reciever adress:</strong>
+  <%= @transaction.reciever_adress %>
+</p>
+
+<p>
+  <strong>Reciever name:</strong>
+  <%= @transaction.reciever_name %>
+</p>
+
+<p>
+  <strong>Reciever email:</strong>
+  <%= @transaction.reciever_email %>
+</p>
+
+<p>
+  <strong>Reciever phone number:</strong>
+  <%= @transaction.reciever_phone_number %>
+</p>
+
+<p>
+  <strong>Shipment info:</strong>
+  <%= @transaction.shipment_info %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @transaction.weight %>
+</p>
+
+<p>
+  <strong>Courier:</strong>
+  <%= @transaction.courier %>
+</p>
+
+<p>
+  <strong>Packages:</strong>
+  <%= @transaction.packages %>
+</p>
+
+<p>
+  <strong>Mode:</strong>
+  <%= @transaction.mode %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @transaction.product %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @transaction.quantity %>
+</p>
+
+<p>
+  <strong>Payment mode:</strong>
+  <%= @transaction.payment_mode %>
+</p>
+
+<p>
+  <strong>Departure time:</strong>
+  <%= @transaction.departure_time %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @transaction.destination %>
+</p>
+
+<p>
+  <strong>Pickup date:</strong>
+  <%= @transaction.pickup_date %>
+</p>
+
+<p>
+  <strong>Pickup time:</strong>
+  <%= @transaction.pickup_time %>
+</p>
+
+<p>
+  <strong>Expected delivery date:</strong>
+  <%= @transaction.expected_delivery_date %>
+</p>
+
+<p>
+  <strong>Current location:</strong>
+  <%= @transaction.current_location %>
+</p>
+
+<p>
+  <strong>Tracking:</strong>
+  <%= @transaction.tracking_id %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>

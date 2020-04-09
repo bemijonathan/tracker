@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :transactions
   get '/' => "application#index"
   post '/login' => "authentication#login_user"
   get '/login' => "authentication#login"

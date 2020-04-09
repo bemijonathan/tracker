@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   skip_before_action :verify_authenticity_token
-  before_action :authenticated , only: [:show, :edit, :update, :destroy]
+  before_action :authenticate , only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -72,8 +72,14 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
+    def authenticate
+      if @current_user === nil
+        redirect_to '/login'
+      end
+    end
+
     # Only allow a list of trusted parameters through.
     def user_params
-      params.fetch(:user, {}).permit(:email, :password, :state, :country, :zip_code, :street)
+      params.fetch(:user, {}).permit(:email, :password, :state, :country, :zip_code, :street, :phone, :name)
     end
 end

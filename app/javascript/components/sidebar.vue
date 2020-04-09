@@ -20,24 +20,17 @@
         </div>
         <b-menu class="is-custom-mobile">
           <b-menu-list>
-            <b-menu-item icon="information-outline" label="Info"></b-menu-item>
-            <b-menu-item active expanded icon="settings" label="Administrator">
-              <b-menu-item icon="account" label="Users"></b-menu-item>
-              <b-menu-item icon="cellphone-link" label="Devices"></b-menu-item>
-              <b-menu-item icon="cash-multiple" label="Payments" disabled></b-menu-item>
-            </b-menu-item>
-            <b-menu-item icon="account" label="My Account">
-              <b-menu-item icon="account-box" label="Account data"></b-menu-item>
-              <b-menu-item icon="home-account" label="Addresses"></b-menu-item>
-            </b-menu-item>
+            <b-menu-item label="Profile"></b-menu-item>
+            <b-menu-item  label="Add New Parcel" href="/transactions/new"></b-menu-item>
+            <b-menu-item  label="Shipments" class="is-active"></b-menu-item>
+            <b-menu-item  label="Orders"></b-menu-item>            
           </b-menu-list>
-          <b-menu-list>
-            <b-menu-item icon="link" tag="router-link" target="_blank" label="done" to="">
-            </b-menu-item>
+          <div style="margin-top:50px;">
+            <b-menu-list >
+            <b-menu-item label="Logout"></b-menu-item>
           </b-menu-list>
-          <b-menu-list>
-            <b-menu-item icon="logout" label="Logout"></b-menu-item>
-          </b-menu-list>
+          </div>
+          
         </b-menu>
       </div>
     </b-sidebar>

@@ -11,6 +11,7 @@ import signup from '../signup.vue'
 import Dashboard from '../dashboard.vue'
 import 'buefy/dist/buefy.css'
 import footerComponent from '../footer.vue'
+import newtransaction from '../newtransaction.vue'
 // Axios.defaults.headers = {
 //   'Content-Type': 'application/json'
 // },
@@ -28,6 +29,6 @@ document.addEventListener('turbolinks:load', () => {
         message: "Can you say hello?"
       }
     },
-    components: { App, navbar, footerComponent , Login , signup, Dashboard}
+    components: { App, navbar, footerComponent , Login , signup, Dashboard, newtransaction}
   })
 })

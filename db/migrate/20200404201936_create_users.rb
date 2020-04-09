@@ -7,6 +7,9 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :zip_code
       t.string :password
       t.string :email
+      t.string :phone
+      t.string :name
+
       t.boolean :admin, default: false
 
       t.timestamps

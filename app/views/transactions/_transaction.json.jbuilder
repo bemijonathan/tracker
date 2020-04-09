@@ -1,0 +1,2 @@
+json.extract! transaction, :id, :shipper_address, :shiper_name, :shiper_phone_number, :shipper_email, :reciever_adress, :reciever_name, :reciever_email, :reciever_phone_number, :shipment_info, :weight, :courier, :packages, :mode, :product, :quantity, :payment_mode, :departure_time, :destination, :pickup_date, :pickup_time, :expected_delivery_date, :current_location, :tracking_id, :created_at, :updated_at
+json.url transaction_url(transaction, format: :json)

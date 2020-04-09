@@ -1,0 +1,132 @@
+<%= form_with(model: transaction, local: true) do |form| %>
+  <% if transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+        <% transaction.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :shipper_address %>
+    <%= form.text_field :shipper_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shiper_name %>
+    <%= form.text_field :shiper_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shiper_phone_number %>
+    <%= form.text_field :shiper_phone_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipper_email %>
+    <%= form.text_field :shipper_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reciever_adress %>
+    <%= form.text_field :reciever_adress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reciever_name %>
+    <%= form.text_field :reciever_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reciever_email %>
+    <%= form.text_field :reciever_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reciever_phone_number %>
+    <%= form.text_field :reciever_phone_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipment_info %>
+    <%= form.text_area :shipment_info %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :courier %>
+    <%= form.text_field :courier %>
+  </div>
+
+  <div class="field">
+    <%= form.label :packages %>
+    <%= form.text_field :packages %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mode %>
+    <%= form.text_field :mode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product %>
+    <%= form.text_field :product %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_mode %>
+    <%= form.text_field :payment_mode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_time %>
+    <%= form.text_field :departure_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destination %>
+    <%= form.text_field :destination %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pickup_date %>
+    <%= form.text_field :pickup_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pickup_time %>
+    <%= form.text_field :pickup_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expected_delivery_date %>
+    <%= form.text_field :expected_delivery_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_location %>
+    <%= form.text_field :current_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tracking_id %>
+    <%= form.text_field :tracking_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

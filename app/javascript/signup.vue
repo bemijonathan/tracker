@@ -10,6 +10,21 @@
         <b-input placeholder="email" type="email" v-model="email"></b-input>
       </b-field>
       <b-field
+        :type="error.includes('name')? 'is-danger' : '' "
+        :message="errormessage.name? errormessage.email[0] : '' "
+        label="Full Name"
+      >
+        <b-input type="text" name="name" v-model="name"></b-input>
+      </b-field>
+      <b-field
+        :type="error.includes('phone')? 'is-danger' : '' "
+        :message="errormessage.phone? errormessage.email[0] : '' "
+        label="Phone"
+      >
+        <b-input type="text" name="phone" v-model="phone"></b-input>
+      </b-field>
+      
+      <b-field
         :type="error.includes('street')? 'is-danger' : '' "
         :message="errormessage.street? errormessage.email[0] : '' "
         label="Street"
@@ -60,6 +75,8 @@ export default {
       street: "",
       state: "",
       country: "",
+      phone:"",
+      name:"",
       loading: false,
       error: [],
       errormessage: {}
@@ -80,6 +97,8 @@ export default {
           street: this.street,
           state: this.state,
           country: this.country,
+          name:this.name,
+          phone: this.phone,
           authenticity_token: document.querySelector('[name="csrf-token"]')
             .content
         };
@@ -93,13 +112,12 @@ export default {
         window.location.assign('/')
         console.log(response);
       } catch (error) {
+        console.log(error.response)
         console.log(error.response.data);
-
         let responseError = error.response.data;
         this.errormessage = responseError;
         this.error = Object.keys(responseError);
       }
-
       this.loading = false;
     }
   }

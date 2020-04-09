@@ -1,0 +1,51 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shipper_address: MyString
+  shiper_name: MyString
+  shiper_phone_number: MyString
+  shipper_email: MyString
+  reciever_adress: MyString
+  reciever_name: MyString
+  reciever_email: MyString
+  reciever_phone_number: MyString
+  shipment_info: MyText
+  weight: MyString
+  courier: MyString
+  packages: MyString
+  mode: MyString
+  product: MyString
+  quantity: MyString
+  payment_mode: MyString
+  departure_time: MyString
+  destination: MyString
+  pickup_date: MyString
+  pickup_time: MyString
+  expected_delivery_date: MyString
+  current_location: MyString
+  tracking_id: MyString
+
+two:
+  shipper_address: MyString
+  shiper_name: MyString
+  shiper_phone_number: MyString
+  shipper_email: MyString
+  reciever_adress: MyString
+  reciever_name: MyString
+  reciever_email: MyString
+  reciever_phone_number: MyString
+  shipment_info: MyText
+  weight: MyString
+  courier: MyString
+  packages: MyString
+  mode: MyString
+  product: MyString
+  quantity: MyString
+  payment_mode: MyString
+  departure_time: MyString
+  destination: MyString
+  pickup_date: MyString
+  pickup_time: MyString
+  expected_delivery_date: MyString
+  current_location: MyString
+  tracking_id: MyString
