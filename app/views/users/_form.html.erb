@@ -1,8 +1,8 @@
+<div class="container" style="max-width:350px; margin-top:25px;">
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
         <% user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -10,8 +10,36 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state , class: "input" %>
+  </div>
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country , class: "input" %>
+  </div>
+  <div class="field">
+    <%= form.label :zipcode %>
+    <%= form.text_field :zipcode , class: "input" %>
+  </div>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email , class: "input" %>
+  </div>
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone , class: "input" %>
+  </div>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name , class: "input" %>
+  </div>
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password , class: "input" %>
+  </div>
+  <div>
+    <%= form.submit class: "button is-primary"%>
   </div>
 <% end %>
+</div>

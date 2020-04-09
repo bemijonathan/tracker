@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="columns" v-if="Country.length > 0" >
-      <sidenav class="column is-one-fifth"> </sidenav>
-      <div class="column">
+      <sidenav class="column is-one-fifth" :user="$props"> </sidenav>
+      <div class="column p-1" style="padding-top:30px">
         <b-field label="Reciever Name">
           <b-input v-model="formdata.reciever_name"></b-input>
         </b-field>
@@ -25,7 +25,7 @@
           <b-input v-model="formdata.reciever_adress" type="textarea"></b-input>
         </b-field>
       </div>
-      <div class="column">
+      <div class="column p-1" style="padding-top:30px">
         <b-field label="shipment_info">
           <b-input v-model="formdata.shipment_info"></b-input>
         </b-field>
@@ -54,6 +54,7 @@ import sidenav from './components/sidebar'
 import Country from "./country.json";
 console.log(Country);
 export default {
+  props:["user"],
   data() {
     return {
       Country: [...Country],

@@ -1,6 +1,6 @@
-<h1>Editing Transaction</h1>
+<%# <h1>Editing Transaction</h1> %>
 
 <%= render 'form', transaction: @transaction %>
-
-<%= link_to 'Show', @transaction %> |
-<%= link_to 'Back', transactions_path %>
+<div style="text-align:center;margin-top:35px;" >
+<%= link_to 'Show Transaction', @transaction, class: "button is-primary" %>
+</div>

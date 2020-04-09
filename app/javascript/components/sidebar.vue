@@ -1,12 +1,11 @@
 <template>
-  <section style="background:azure; height:100vh">
+  <section style="background:azure; height:100vh" class="sideNav">
     <b-sidebar
       position="static"
-      :mobile="mobile"
       :expand-on-hover="expandOnHover"
       :reduce="reduce"
       type="is-dark"
-      open
+      :open="open"
     >
       <div class="p-1">
         <div class="block" style="text-align:center">
@@ -20,14 +19,16 @@
         </div>
         <b-menu class="is-custom-mobile">
           <b-menu-list>
-            <b-menu-item label="Profile"></b-menu-item>
+            <b-menu-item label="Profile" :href=" '/users/'+ user.user.id + '/edit' "></b-menu-item>
             <b-menu-item  label="Add New Parcel" href="/transactions/new"></b-menu-item>
-            <b-menu-item  label="Shipments" class="is-active"></b-menu-item>
-            <b-menu-item  label="Orders"></b-menu-item>            
+            <b-menu-item  label="Shipments" class="is-active" href="/dashboard"></b-menu-item>
+            <b-menu-item  label="Orders (comming soon)" disabled></b-menu-item>   
+            <b-menu-item  label="All Users" href="/users" v-if="user.user.admin"></b-menu-item>            
+            <b-menu-item  label="All Transactions" href="/transactions" v-if="user.user.admin"></b-menu-item>   
           </b-menu-list>
           <div style="margin-top:50px;">
             <b-menu-list >
-            <b-menu-item label="Logout"></b-menu-item>
+            <b-menu-item label="Logout" href="/logout"></b-menu-item>
           </b-menu-list>
           </div>
           
@@ -39,11 +40,13 @@
 
 <script>
 export default {
+  props:["user"],
   data() {
     return {
       expandOnHover: false,
       mobile: "reduce",
-      reduce: false
+      reduce: false,
+      open:false
     };
   }
 };

@@ -1,63 +1,51 @@
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Transactions</h1>
 
-<table>
+<div class="">
+<table class="table" style="overflow:auto">
   <thead>
     <tr>
-      <th>Shipper address</th>
-      <th>Shiper name</th>
-      <th>Shiper phone number</th>
-      <th>Shipper email</th>
-      <th>Reciever adress</th>
-      <th>Reciever name</th>
-      <th>Reciever email</th>
-      <th>Reciever phone number</th>
-      <th>Shipment info</th>
+      <th>S name</th>
+      <th>S email</th>
+      <th>R name</th>
+      <th>R email</th>
+      <th>R phone</th>
       <th>Weight</th>
-      <th>Courier</th>
-      <th>Packages</th>
       <th>Mode</th>
       <th>Product</th>
-      <th>Quantity</th>
-      <th>Payment mode</th>
-      <th>Departure time</th>
-      <th>Destination</th>
+      <th>qty</th>
+      <th>Dest</th>
       <th>Pickup date</th>
       <th>Pickup time</th>
-      <th>Expected delivery date</th>
-      <th>Current location</th>
-      <th>Tracking</th>
-      <th colspan="3"></th>
+      <th>location</th>
+      <th></th>
+      <th></th>
+      <th></th>
+
+
     </tr>
   </thead>
 
   <tbody>
     <% @transactions.each do |transaction| %>
       <tr>
-        <td><%= transaction.shipper_address %></td>
-        <td><%= transaction.shiper_name %></td>
-        <td><%= transaction.shiper_phone_number %></td>
+        <td> <%= link_to  "#{transaction.shiper_name}", "users/#{transaction.user.id}" %>  </td>
         <td><%= transaction.shipper_email %></td>
-        <td><%= transaction.reciever_adress %></td>
         <td><%= transaction.reciever_name %></td>
         <td><%= transaction.reciever_email %></td>
         <td><%= transaction.reciever_phone_number %></td>
-        <td><%= transaction.shipment_info %></td>
         <td><%= transaction.weight %></td>
-        <td><%= transaction.courier %></td>
-        <td><%= transaction.packages %></td>
         <td><%= transaction.mode %></td>
         <td><%= transaction.product %></td>
         <td><%= transaction.quantity %></td>
-        <td><%= transaction.payment_mode %></td>
-        <td><%= transaction.departure_time %></td>
-        <td><%= transaction.destination %></td>
+        <td><%= transaction.reciever_country %></td>
         <td><%= transaction.pickup_date %></td>
         <td><%= transaction.pickup_time %></td>
         <td><%= transaction.expected_delivery_date %></td>
         <td><%= transaction.current_location %></td>
-        <td><%= transaction.tracking_id %></td>
         <td><%= link_to 'Show', transaction %></td>
         <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
         <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -65,7 +53,35 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
 <%= link_to 'New Transaction', new_transaction_path %>
+
+<style>
+
+table#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd !important;
+    padding: 8px !important;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2 !important; }
+  
+  #customers tr:hover {background-color: #ddd !important; }
+  
+  #customers th {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    text-align: left !important;
+    background-color: #4CAF50 !important;
+    color: white !important;
+  }
+
+  </style>

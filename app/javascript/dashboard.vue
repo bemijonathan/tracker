@@ -1,6 +1,6 @@
 <template>
   <div class="columns">
-      <sidenav class="column is-one-fifth"> </sidenav>
+      <sidenav class="column is-one-fifth" :user="$props"> </sidenav>
       <div class="is-full">
           <Table class="" expanded></Table>
       </div>
@@ -11,6 +11,7 @@
 import sidenav from './components/sidebar'
 import Table from './components/table'
 export default {
+    props:["user"],
     components:{
         sidenav,
         Table

@@ -1,3 +1,5 @@
+<div style="max-width:350px; margin:auto">
+
 <%= form_with(model: transaction, local: true) do |form| %>
   <% if transaction.errors.any? %>
     <div id="error_explanation">
@@ -13,120 +15,122 @@
 
   <div class="field">
     <%= form.label :shipper_address %>
-    <%= form.text_field :shipper_address %>
+    <%= form.text_field :shipper_address , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :shiper_name %>
-    <%= form.text_field :shiper_name %>
+    <%= form.text_field :shiper_name , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :shiper_phone_number %>
-    <%= form.text_field :shiper_phone_number %>
+    <%= form.text_field :shiper_phone_number , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :shipper_email %>
-    <%= form.text_field :shipper_email %>
+    <%= form.text_field :shipper_email , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :reciever_adress %>
-    <%= form.text_field :reciever_adress %>
+    <%= form.text_field :reciever_adress , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :reciever_name %>
-    <%= form.text_field :reciever_name %>
+    <%= form.text_field :reciever_name , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :reciever_email %>
-    <%= form.text_field :reciever_email %>
+    <%= form.text_field :reciever_email , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :reciever_phone_number %>
-    <%= form.text_field :reciever_phone_number %>
+    <%= form.text_field :reciever_phone_number , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :shipment_info %>
-    <%= form.text_area :shipment_info %>
+    <%= form.text_area :shipment_info, class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :weight %>
-    <%= form.text_field :weight %>
+    <%= form.text_field :weight , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :courier %>
-    <%= form.text_field :courier %>
+    <%= form.text_field :courier , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :packages %>
-    <%= form.text_field :packages %>
+    <%= form.text_field :packages , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :mode %>
-    <%= form.text_field :mode %>
+    <%= form.text_field :mode , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :product %>
-    <%= form.text_field :product %>
+    <%= form.text_field :product , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :quantity %>
-    <%= form.text_field :quantity %>
+    <%= form.text_field :quantity , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :payment_mode %>
-    <%= form.text_field :payment_mode %>
+    <%= form.text_field :payment_mode , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :departure_time %>
-    <%= form.text_field :departure_time %>
+    <%= form.text_field :departure_time , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :destination %>
-    <%= form.text_field :destination %>
+    <%= form.text_field :destination , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :pickup_date %>
-    <%= form.text_field :pickup_date %>
+    <%= form.text_field :pickup_date , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :pickup_time %>
-    <%= form.text_field :pickup_time %>
+    <%= form.text_field :pickup_time , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :expected_delivery_date %>
-    <%= form.text_field :expected_delivery_date %>
+    <%= form.text_field :expected_delivery_date , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :current_location %>
-    <%= form.text_field :current_location %>
+    <%= form.text_field :current_location , class: "input" %>
   </div>
 
   <div class="field">
     <%= form.label :tracking_id %>
-    <%= form.text_field :tracking_id %>
+    <%= form.text_field :tracking_id , class: "input" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions ">
+    <%= form.submit class: "button is-primary"%>
   </div>
+  
 <% end %>
+</div>

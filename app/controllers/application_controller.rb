@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
         user = User.find_by(id: session[:id])
         if user
             @user_details = user
-            @current_user = user.slice(:id,  :email)
+            @current_user = user.slice(:id,  :email, :admin)
         end
     end
 end
