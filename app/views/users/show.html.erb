@@ -1,4 +1,36 @@
+<div class="container" > 
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<p style=" margin:10px 0;">
+  <strong>Shipper address:</strong>
+  <%= @user.email %>
+</p>
+
+<p style=" margin:10px 0;">
+  <strong>Shiper name:</strong>
+  <%= @user.name %>
+</p>
+
+<p style=" margin:10px 0;">
+  <strong>Shiper phone number:</strong>
+  <%= @user.country %>
+</p>
+
+<p style=" margin:10px 0;">
+  <strong>Shipper email:</strong>
+  <%= @user.state %>
+</p>
+
+<p style=" margin:10px 0;">
+  <strong>Reciever adress:</strong>
+  <%= @user.street %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) , class: "button is-primary" %>
+</div>
+
+<style>
+.container p{
+   
+}
+</style>

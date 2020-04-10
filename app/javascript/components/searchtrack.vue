@@ -14,10 +14,11 @@
                     message: `What's your name?`,
                     inputAttrs: {
                         placeholder: '12345ACB',
-                        maxlength: 10
                     },
                     trapFocus: true,
-                    onConfirm(value){  this.$buefy.toast.open(`Your name is: ${value}`) }
+                    onConfirm(value){ 
+                        window.location.assign('/search?q='+value)
+                    }
                 })
             },
         }

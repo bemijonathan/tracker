@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_04_08_211151) do
     t.string "expected_delivery_date"
     t.string "current_location"
     t.string "tracking_id"
-    t.string "container_status"
+    t.string "container_status", default: "not recieved"
     t.string "reciever_country"
     t.string "reciever_state"
     t.bigint "user_id"

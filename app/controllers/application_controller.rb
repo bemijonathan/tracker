@@ -10,4 +10,14 @@ class ApplicationController < ActionController::Base
             @current_user = user.slice(:id,  :email, :admin)
         end
     end
+
+    def search
+        @transaction = Transaction.find_by(tracking_id: params[:q])
+    end
+
+    def about
+    end
+    
+    def contact
+    end
 end

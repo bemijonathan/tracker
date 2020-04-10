@@ -5,6 +5,7 @@ import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
 import navbar from '../components/nav'
+import search from '../components/single.vue'
 import Buefy from 'buefy'
 import Login from '../login.vue'
 import signup from '../signup.vue'
@@ -29,6 +30,6 @@ document.addEventListener('turbolinks:load', () => {
         message: "Can you say hello?"
       }
     },
-    components: { App, navbar, footerComponent , Login , signup, Dashboard, newtransaction}
+    components: { App, navbar, footerComponent , Login , signup, Dashboard, newtransaction, search }
   })
 })

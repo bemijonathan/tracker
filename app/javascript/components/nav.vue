@@ -11,10 +11,10 @@
     </template>
     <template slot="start">
       <b-navbar-item href="/">Home</b-navbar-item>
-      <b-navbar-item href="#">Shipping</b-navbar-item>
+      <b-navbar-item href="/shipping">Shipping</b-navbar-item>
       <b-navbar-dropdown label="Info">
-        <b-navbar-item href="#">About</b-navbar-item>
-        <b-navbar-item href="#">Contact</b-navbar-item>
+        <b-navbar-item href="/about">About</b-navbar-item>
+        <b-navbar-item href="/contact">Contact</b-navbar-item>
       </b-navbar-dropdown>
     </template>
 

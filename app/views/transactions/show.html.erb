@@ -1,119 +1,121 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Shipper address:</strong>
   <%= @transaction.shipper_address %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Shiper name:</strong>
   <%= @transaction.shiper_name %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Shiper phone number:</strong>
   <%= @transaction.shiper_phone_number %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Shipper email:</strong>
   <%= @transaction.shipper_email %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Reciever adress:</strong>
   <%= @transaction.reciever_adress %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Reciever name:</strong>
   <%= @transaction.reciever_name %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Reciever email:</strong>
   <%= @transaction.reciever_email %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Reciever phone number:</strong>
   <%= @transaction.reciever_phone_number %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Shipment info:</strong>
   <%= @transaction.shipment_info %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Weight:</strong>
   <%= @transaction.weight %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Courier:</strong>
   <%= @transaction.courier %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Packages:</strong>
   <%= @transaction.packages %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Mode:</strong>
   <%= @transaction.mode %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Product:</strong>
   <%= @transaction.product %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Quantity:</strong>
   <%= @transaction.quantity %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Payment mode:</strong>
   <%= @transaction.payment_mode %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Departure time:</strong>
   <%= @transaction.departure_time %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Destination:</strong>
   <%= @transaction.destination %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Pickup date:</strong>
   <%= @transaction.pickup_date %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Pickup time:</strong>
   <%= @transaction.pickup_time %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Expected delivery date:</strong>
   <%= @transaction.expected_delivery_date %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Current location:</strong>
   <%= @transaction.current_location %>
 </p>
 
-<p>
+<p style="margin:10px 0">
   <strong>Tracking:</strong>
   <%= @transaction.tracking_id %>
 </p>
 
-<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
-<%= link_to 'Reciept', '#' %>
+<%= link_to 'Edit', edit_transaction_path(@transaction) , class: "button is-primary"%> |
+<%= link_to 'View Reciept', '#' ,class: "button is-primary"  %>
+</div>

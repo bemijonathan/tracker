@@ -89,12 +89,12 @@ export default {
             }
           );
           console.log(response);
-          //   window.location.assign('/dashboard')
+            window.location.assign('/dashboard')
         } catch (error) {
           console.log(error.response);
         }
         this.loading = false;
-      }
+      }false
     },
     resetForm() {
       for (const e in this.formdata) {

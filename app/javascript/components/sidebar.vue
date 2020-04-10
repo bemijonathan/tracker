@@ -2,10 +2,11 @@
   <section style="background:azure; height:100vh" class="sideNav">
     <b-sidebar
       position="static"
+      mobile="reduce"
       :expand-on-hover="expandOnHover"
       :reduce="reduce"
       type="is-dark"
-      :open="open"
+      open.sync="open"
     >
       <div class="p-1">
         <div class="block" style="text-align:center">

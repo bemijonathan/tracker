@@ -1,25 +1,40 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Users</h1>
-
-<table>
+<h1 style="text-align:center; margin-top:20px">Users</h1>
+<table class="table container" style="font-size:12px">
   <thead>
     <tr>
+      <th> street </th>
+      <th> state </th>
+      <th> country </th>
+      <th> zip_code </th>
+      <th> password </th>
+      <th> email </th>
+      <th> phone </th>
+      <th> name </th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td> <%= user.street %> </td>
+        <td> <%= user.state %> </td>
+        <td> <%= user.country %> </td>
+        <td> <%= user.zip_code %> </td>
+        <td> <%= user.password %> </td>
+        <td> <%= user.email %> </td>
+        <td> <%= user.phone %> </td>
+        <td> <%= user.name %> </td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
+  
 </table>
-
 <br>
+<div class="container">
+<%= link_to 'New User', new_user_path, class: "button is-primary" %>
+</div>
 
-<%= link_to 'New User', new_user_path %>

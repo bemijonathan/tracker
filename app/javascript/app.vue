@@ -13,8 +13,8 @@
         </div>
         <div class="column">
           <b-menu>
-            <h1 class="is-size-3 has-text-weight-bold">Be Our Guest</h1>
             <b-menu-list style="color:white !Important">
+              <h1 class="is-size-3 has-text-weight-bold">Be Our Guest</h1>
               <b-menu-item label="Ship Online Now!"></b-menu-item>
               <b-menu-item label="Login or Open a DHL Account"></b-menu-item>
               <b-menu-item label="Pay with PayPal"></b-menu-item>

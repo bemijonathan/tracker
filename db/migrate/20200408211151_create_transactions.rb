@@ -24,7 +24,7 @@ class CreateTransactions < ActiveRecord::Migration[6.0]
       t.string :expected_delivery_date
       t.string :current_location
       t.string :tracking_id
-      t.string :container_status
+      t.string :container_status , default: "not recieved"
       t.string :reciever_country
       t.string :reciever_state
       t.belongs_to :user
