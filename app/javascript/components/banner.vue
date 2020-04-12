@@ -10,17 +10,20 @@
       :icon-size="iconSize"
     >
       <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-        <section :class="`hero is-medium is-${carousel.color}`">
-          <div class="hero-body has-text-centered" style="height:600px">
-            <h1 class="title">{{carousel.title}}</h1>
-            <p>
-              Express Delivery Services & International Shipping
+        <section :class="`hero is-medium is-${carousel.color}`" :style="{'background-image':`url(${carousel.image})`}">
+          <div class="hero-body has-text-centered" style="height:600px ">
+            <div class="backdrop">
+              <h1 class="title">Express Delivery Services & International Shipping</h1>
+            <p style="font-weight:bolder" class="is-dark">
+              
               
             </p>
-            <div>
-              <b-button type="is-dark" inverted>Log In</b-button>
-              <b-button type="is-dark" inverted outlined> Track Your Shipment</b-button>
+            <div style="font-weight:bolder">
+              <a type="is-primary" class="button is-primary" href="/login" inverted>Log In</a>
+              <a type="is-primary"  class="button is-primary" inverted outlined href="/signup"> Track Your Shipment</a>
             </div>
+            </div>
+            
           </div>
         </section>
       </b-carousel-item>
@@ -40,11 +43,33 @@ export default {
       iconNext: "arrow-right",
       iconSize: "",
       carousels: [
-        { title: "Slide 1", color: "primary" },
-        { title: "Slide 2", color: "dark" },
-        { title: "Slide 3", color: "light" }
+        { title: "Slide 1", color: "primary" , image:'images/banner1.jpg'},
+        { title: "Slide 2", color: "dark" , image:'images/banner2.jpg'},
+        // { title: "Slide 3", color: "light", image:'url' } 
       ]
     };
   }
 };
 </script>
+
+<style>
+  section.hero{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  div.hero-body{
+    display: grid;
+    align-content: center;
+    justify-items: center
+  }
+  .backdrop{
+    padding: 10px;
+    backdrop-filter: blur(100px);
+    border-radius: 20px;
+  }
+  .backdrop .title{
+    /* color: black !important; */
+  }
+</style>

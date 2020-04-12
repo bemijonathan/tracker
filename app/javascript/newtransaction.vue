@@ -2,7 +2,7 @@
   <div>
     <div class="columns" v-if="Country.length > 0" >
       <sidenav class="column is-one-fifth" :user="$props"> </sidenav>
-      <div class="column p-1" style="padding-top:30px">
+      <div class="column p-1" style="padding-top:30px; margin:10px">
         <b-field label="Reciever Name">
           <b-input v-model="formdata.reciever_name"></b-input>
         </b-field>
@@ -25,7 +25,7 @@
           <b-input v-model="formdata.reciever_adress" type="textarea"></b-input>
         </b-field>
       </div>
-      <div class="column p-1" style="padding-top:30px">
+      <div class="column p-1" style="padding-top:30px; margin:10px;">
         <b-field label="shipment_info">
           <b-input v-model="formdata.shipment_info"></b-input>
         </b-field>

@@ -1,4 +1,48 @@
 <template>
+<div>
+  <button class="button is-primary hide-menu" @click="show= !show">
+  {{ show ? 'Close' : 'Open Menu' }}
+</button>
+  <section class="anotherMobile" style="background:azure; height:100vh" v-if="show">
+    <b-sidebar
+      position="static"
+      mobile="reduce"
+      :expand-on-hover="expandOnHover"
+      :reduce="reduce"
+      type="is-dark"
+      open.sync="open"
+    >
+      <div class="p-1">
+        <div class="block" style="text-align:center">
+            <a href="/">
+          <img
+            src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
+            alt="Lightweight UI components for Vue.js based on Bulma"
+            width="100px"
+          />
+            </a>
+        </div>
+        <b-menu class="is-custom-mobile">
+          <b-menu-list>
+            <b-menu-item label="Profile" :href=" '/users/'+ user.user.id + '/edit' "></b-menu-item>
+            <b-menu-item  label="Add New Parcel" href="/transactions/new"></b-menu-item>
+            <b-menu-item  label="Shipments" class="is-active" href="/dashboard"></b-menu-item>
+            <b-menu-item  label="Orders (comming soon)" disabled></b-menu-item>   
+            <b-menu-item  label="All Users" href="/users" v-if="user.user.admin"></b-menu-item>            
+            <b-menu-item  label="All Transactions" href="/transactions" v-if="user.user.admin"></b-menu-item>   
+          </b-menu-list>
+          <div style="margin-top:50px;">
+            <b-menu-list >
+            <b-menu-item label="Logout" href="/logout"></b-menu-item>
+          </b-menu-list>
+          </div>
+          
+        </b-menu>
+      </div>
+    </b-sidebar>
+</section>
+
+
   <section style="background:azure; height:100vh" class="sideNav">
     <b-sidebar
       position="static"
@@ -37,6 +81,8 @@
       </div>
     </b-sidebar>
   </section>
+</div>
+
 </template>
 
 <script>
@@ -47,7 +93,8 @@ export default {
       expandOnHover: false,
       mobile: "reduce",
       reduce: false,
-      open:false
+      open:false,
+      show:false
     };
   }
 };
@@ -118,5 +165,22 @@ export default {
             }
         }
     }
+}
+
+.hide-menu{
+  display: none !important;
+  margin: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .sideNav{
+    
+    display: none
+  }
+
+  .hide-menu{
+    margin: 10px;
+    display: block !important;
+  }
 }
 </style>

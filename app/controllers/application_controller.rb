@@ -20,4 +20,11 @@ class ApplicationController < ActionController::Base
     
     def contact
     end
+
+    def redirect
+        if @current_user === nil
+            flash[:notice] = 'You Have To Be Logged In '
+            redirect_to '/login'
+        end
+    end
 end
