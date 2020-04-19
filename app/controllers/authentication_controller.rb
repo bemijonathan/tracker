@@ -1,6 +1,8 @@
 class AuthenticationController < ApplicationController
 
-    skip_before_action :verify_authenticity_token
+    # skip_before_action :verify_authenticity_token
+    # skip_before_action :verify_authenticity_token
+    
 
     def login
     end
@@ -24,8 +26,5 @@ class AuthenticationController < ApplicationController
     def signup
     end
 
-    def logout
-        session[:id] = nil
-        redirect_to '/'
-    end
+
 end

@@ -4,12 +4,14 @@ Rails.application.routes.draw do
   post '/login' => "authentication#login_user"
   get '/login' => "authentication#login"
   get '/signup' => "authentication#signup"
-  get '/logout' => "authentication#logout"
+  get '/logout' => "application#logout"
   get '/dashboard' => "dashboard#index"
   get '/search' => "application#search"
   get '/shipping' => "application#shipping"
   get '/about' => "application#about"
   get '/contact' => "application#contact"
+  get '/sendmailpage' => "application#sendmailpage"
+  post '/sendmail' => "application#sentmail"
 
   resources :users
 

@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
-    before_action :authenticated
+    before_action :authenticated 
+    # skip_before_action :verify_authenticity_token
+    skip_forgery_protection
+
     def index
     end
 
@@ -21,10 +24,40 @@ class ApplicationController < ActionController::Base
     def contact
     end
 
+    def sendmailpage
+        if @current_user != nil and @user_details.admin
+            
+        else
+            redirect_to '/login'
+        end
+    end
+
+    def sentmail
+        user = User.find_by(email: params[:email])
+        if user.present?
+            LocationMailer.with(name: params[:name], email: user[:email], content: params[:content]).remind_location.deliver_now
+            puts("************************************")
+            puts("Help get the email")
+            puts("************************************")
+
+            # redirect_to '/'
+        else
+            puts("************************************")
+            puts("************************************")
+            flash[:notice] = 'user not found'
+            redirect_to '/sendmailpage'
+        end
+    end
+
     def redirect
         if @current_user === nil
             flash[:notice] = 'You Have To Be Logged In '
             redirect_to '/login'
         end
+    end
+
+    def logout
+        session[:id] = nil
+        redirect_to '/'
     end
 end
